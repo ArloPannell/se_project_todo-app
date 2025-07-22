@@ -1,10 +1,10 @@
 # Simple Todo App
 
-Give a brief description of the project here. Feel free to give it a different name.
+This is a simple Task list
 
 ## Functionality
 
-Give a more detailed explanation of the project and its functionality.
+It does things and stuff
 
 ## Technology
 
