@@ -19,14 +19,18 @@ https://arlopannell.github.io/se_project_todo-app/
 
 ## Scrennshots
 
-Main Screen
-![Main Screen](./images/todoApp.png)
+### Main Screen
 
-Task Entry Form
-![Task Entry](./images/todoEntry.png)
+<img width="50%" height="50%" src="./images/todoApp.png" alt="Main Screen">
 
-Form Validation
-![Form Validation](./images/todoValidation.png)
+### Task Entry Form
 
-New Task added, items can be checked off the list
-![Items Complete](./images/newTodo.png)
+<img width="50%" height="50%" src="./images/todoEntry.png" alt = "Task Entry">
+
+### Form Validation
+
+<img width="50%" height="50%" src="./images/todoValidation.png" alt = "Form Valication">
+
+### New Task added, items can be checked off the list
+
+<img width="50%" height="50%" src="./images/todoEntry.png" alt="New Task">
