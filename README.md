@@ -12,4 +12,6 @@ Sample project, implementing javascript modules and classes, practice in OOP
 
 ## Deployment
 
-This project is not yet deployed on GitHub Pages:
+This project is deployed on GitHub Pages:
+
+https://arlopannell.github.io/se_project_todo-app/
