@@ -4,14 +4,12 @@ This is a simple Task list
 
 ## Functionality
 
-It does things and stuff
+It lets you create a simple to do list that lasts as long as you leave the browser window open
 
 ## Technology
 
-Give a description of the technologies and techniques used. Pictures, GIFs, or screenshots that detail the project features are recommended.
+Sample project, implementing javascript modules and classes, practice in OOP
 
 ## Deployment
 
-This project is deployed on GitHub Pages:
-
-- ADD LINK HERE
+This project is not yet deployed on GitHub Pages:
