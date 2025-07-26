@@ -22,20 +22,12 @@ class Todo {
     );
     const todoLabel = this._todoEl.querySelector(todoConfig.todoLabel);
     this._todoCheckboxEl.checked = this._data.completed;
-    // Apply id and for attributes.
-    // The id will initially be undefined for new todos.
     this._todoCheckboxEl.id = `todo-${this._data.id}`;
     todoLabel.setAttribute("for", `todo-${this._data.id}`);
   }
 
-  getView(todoConfig) {
-    this._todoEl = this._templateEl.content
-      .querySelector(todoConfig.todoSelector)
-      .cloneNode(true);
-    const todoNameEl = this._todoEl.querySelector(todoConfig.todoNameEl);
+  _generateDate(todoConfig) {
     const todoDate = this._todoEl.querySelector(todoConfig.todoDate);
-    todoNameEl.textContent = this._data.name;
-    this._generateCheckbox(todoConfig);
     // If a due date has been set, parsing this it with `new Date` will return a
     // number. If so, we display a string version of the due date in the todo.
     const dueDate = new Date(this._data.date);
@@ -46,10 +38,20 @@ class Todo {
         day: "numeric",
       })}`;
     }
+  }
+
+  getView(todoConfig) {
+    this._todoEl = this._templateEl.content
+      .querySelector(todoConfig.todoSelector)
+      .cloneNode(true);
+    const todoNameEl = this._todoEl.querySelector(todoConfig.todoNameEl);
+    todoNameEl.textContent = this._data.name;
+    this._generateCheckbox(todoConfig);
+    this._generateDate(todoConfig);
     this._setEventListeners(todoConfig);
 
     return this._todoEl;
   }
-}
+} // end class
 
 export default Todo;
