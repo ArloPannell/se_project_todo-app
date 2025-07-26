@@ -33,4 +33,4 @@ https://arlopannell.github.io/se_project_todo-app/
 
 ### New Task added, items can be checked off the list
 
-<img width="50%" height="50%" src="./images/todoEntry.png" alt="New Task">
+<img width="50%" height="50%" src="./images/newTodo.png" alt="New Task">
