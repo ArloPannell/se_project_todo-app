@@ -17,7 +17,7 @@ This project is deployed on GitHub Pages:
 
 https://arlopannell.github.io/se_project_todo-app/
 
-## Scrennshots
+## Screenshots
 
 ### Main Screen
 
