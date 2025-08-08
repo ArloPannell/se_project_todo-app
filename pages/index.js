@@ -8,6 +8,7 @@ import {
 
 import Todo from "../components/Todo.js";
 import FormValidator from "../components/FormValidator.js";
+import Section from "../components/Section.js";
 
 const addTodoButton = document.querySelector(todoConfig.addTodoButton);
 const addTodoPopup = document.querySelector(todoConfig.addTodoPopup);
