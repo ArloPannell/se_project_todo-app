@@ -1,17 +1,10 @@
 export default class Todo {
-  constructor(
-    data,
-    selector,
-    updateCompleted,
-    updateTodoDeleted,
-    updateAddTodo
-  ) {
+  constructor(data, selector, updateCompleted, updateTodoDeleted) {
     this._data = data;
     this._completed = data.completed;
     this._templateEl = document.querySelector(selector);
     this._updateCompleted = updateCompleted;
     this._updateTodoDeleted = updateTodoDeleted;
-    this._updateAddTodo = updateAddTodo;
   }
 
   _toggleCheckbox() {

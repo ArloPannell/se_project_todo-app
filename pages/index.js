@@ -13,8 +13,8 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import TodoCounter from "../components/TodoCounter.js";
 
 const addTodoButton = document.querySelector(todoConfig.addTodoButton);
-const TodoPopup = document.querySelector(todoConfig.addTodoPopup);
-const addTodoForm = TodoPopup.querySelector(todoConfig.addTodoForm);
+const addTodoPopupEl = document.querySelector(todoConfig.addTodoPopup);
+const addTodoForm = addTodoPopupEl.querySelector(todoConfig.addTodoForm);
 const todosList = document.querySelector(todoConfig.todosList);
 
 // functions to update todo counter feature
@@ -55,7 +55,7 @@ const section = new Section(
         updateTodoDeleted
       );
       const todoEl = todo.getView(todoConfig);
-      todosList.append(todoEl);
+      section.addItem(todoEl);
     },
   },
   todosList
@@ -72,7 +72,7 @@ const addTodoPopup = new PopupWithForm({
   popupSelector: todoConfig.addTodoPopup,
   submitFunction: (inputValues) => {
     section.addItem(generateTodo(inputValues));
-    newTodoValidator.enableValidation();
+    newTodoValidator.resetValidation();
     updateAddTodo(!inputValues.completed);
   },
 });
