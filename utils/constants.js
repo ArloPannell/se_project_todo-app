@@ -42,6 +42,7 @@ const todoConfig = {
   todoDeleteBtn: ".todo__delete-btn",
   todoSelector: ".todo",
   popupVisible: "popup_visible",
+  todoCounterSelector: ".counter__text",
 };
 
 export { initialTodos, validationConfig, todoConfig };

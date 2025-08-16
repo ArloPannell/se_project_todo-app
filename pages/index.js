@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from "https://jspm.dev/uuid";
-
 import {
   initialTodos,
   validationConfig,
@@ -12,9 +10,19 @@ import Section from "../components/Section.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import TodoCounter from "../components/TodoCounter.js";
 
+const addTodoPopup = new PopupWithForm({
+  popupSelector: todoConfig.addTodoPopup,
+  submitFunction: (inputValues) => {
+    renderTodo(inputValues);
+    newTodoValidator.resetValidation();
+    updateAddTodo(!inputValues.completed);
+  },
+});
+
+addTodoPopup.setEventListeners();
+
 const addTodoButton = document.querySelector(todoConfig.addTodoButton);
-const addTodoPopupEl = document.querySelector(todoConfig.addTodoPopup);
-const addTodoForm = addTodoPopupEl.querySelector(todoConfig.addTodoForm);
+const addTodoForm = addTodoPopup.getForm();
 const todosList = document.querySelector(todoConfig.todosList);
 
 // functions to update todo counter feature
@@ -40,6 +48,11 @@ const generateTodo = (data) => {
   return todoEl;
 };
 
+const renderTodo = (item) => {
+  const todo = generateTodo(item);
+  section.addItem(todo);
+};
+
 addTodoButton.addEventListener("click", () => {
   addTodoPopup.open();
 });
@@ -48,14 +61,7 @@ const section = new Section(
   {
     items: initialTodos,
     renderer: (item) => {
-      const todo = new Todo(
-        item,
-        todoConfig.todoTemplate,
-        updateCompleted,
-        updateTodoDeleted
-      );
-      const todoEl = todo.getView(todoConfig);
-      section.addItem(todoEl);
+      renderTodo(item);
     },
   },
   todosList
@@ -63,18 +69,10 @@ const section = new Section(
 
 section.renderItems();
 
-const todoCountUpdate = new TodoCounter(initialTodos, ".counter__text");
+const todoCountUpdate = new TodoCounter(
+  initialTodos,
+  todoConfig.todoCounterSelector
+);
 
 const newTodoValidator = new FormValidator(addTodoForm, validationConfig);
 newTodoValidator.enableValidation();
-
-const addTodoPopup = new PopupWithForm({
-  popupSelector: todoConfig.addTodoPopup,
-  submitFunction: (inputValues) => {
-    section.addItem(generateTodo(inputValues));
-    newTodoValidator.resetValidation();
-    updateAddTodo(!inputValues.completed);
-  },
-});
-
-addTodoPopup.setEventListeners();
